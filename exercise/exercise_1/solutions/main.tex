@@ -25,21 +25,42 @@
 
 \begin{document}
 
-\title{Exercise 1}
+\title{Solutions to Exercise 1}
 \author{Jonah Weinbaum}
 \date{\today}
 \maketitle
 
 \begin{itemize}
     \item [1.] Show that an element of a finite group is of finite order. 
-        \\That is, if $(G, \cdot)$ is such that $|G| < \infty$ then $\forall\text{ }x\in{G}$ then $\text{ord}(x) = k$ for some $k\in\mathbb{N}$. The $\operatorname{ord}(x)$ is the smallest positive integer $k$ such that $x^k = e$. If no such $k$ exists we say $\operatorname{ord}(x) = \infty$.
+      \\That is, if $(G, \cdot)$ is such that $|G| < \infty$ then $\forall\text{ }x\in{G}$ then $\text{ord}(x) = k$ for some $k\in\mathbb{N}$. The $\operatorname{ord}(x)$ is the smallest positive integer $k$ such that $x^k = e$. If no such $k$ exists we say $\operatorname{ord}(x) = \infty$.
+      \begin{proof}
+        Suppose not, that is $\exists\text{ }g\in{G}$ s.t. $\operatorname{ord}(g) = \infty$. To wit, $\forall\text{ }k\in\mathbb{N}$ we have $g^k\ne e$. Then for the set $M \coloneq \{g^i\text{ }\vert\text{ }i\in\mathbb{N}\}$ we have that $e\notin M$.
+        \\\\Let
+        \begin{align*}
+          \phi: \mathbb{N} &\to M\\
+          i &\mapsto g^i
+        \end{align*}
+        We claim that $\phi$ is an injection. Suppose not, then $\exists\text{ }i,j\in\mathbb{N}$ s.t. $i\ne j$ and $g^i=\phi(i)=\phi(j)=g^j$. Assume without-loss-of-generality that $i > j$. Then we have
+        \begin{align*}
+          g^{i-j} &= g^i\cdot g^{-j}\\
+                  &= g^i\cdot (g^{j})^{-1}\\
+                  &= g^i\cdot (g^i)^{-1}\\
+          &= e
+        \end{align*}
+        Then $e\in M$ since $g^{i-j}\in M$, a contradiction.
+        \\\\Then $\phi$ is an injection. Since $M\subseteq G$ we have the following chain of inequalities
+        \begin{center}
+          $\infty = |\mathbb{N}| \le |M| \le |G| < \infty$
+        \end{center}
+        a contradiciton.
+      \end{proof}
     \item [2.]Let $S_n$ be the symmetric group on $n$ elements. Let $\sigma\in S_n$. Show that $\sim_{\sigma}$ defined by 
     \begin{center}
         $i\sim_\sigma j \iff \exists\text{ }k\in\mathbb{Z}\colon\sigma^k(i)=j$
     \end{center}
     is an equivalence relation on $\mathbb{N}_n$.
-    \begin{proof}
-      \begin{enumerate}
+    \begin{proof}\text{ }
+      \\\begin{enumerate}
       \item Fix $i\in\mathbb{N}_n$. Then $\sigma^0(i) = i$ so $i \sim_\sigma i$.
       \item Fix $i,j\in\mathbb{N}_n$ s.t. $i\sim_\sigma j$. Then $\exists\text{ }k\in\mathbb{Z}$ s.t. $\sigma^k(i) = j$. Then we have
         \begin{align*}
@@ -62,18 +83,21 @@
       \end{enumerate}
       Then $\sim_\sigma$ is an equivalence relation on $\mathbb{N}_n$. 
     \end{proof}
+    \iffalse
     \begin{definition}
       \\If $\sim$ is an equivalence relation on a set $S$. Then the \textbf{equivalence class} of $x\in S$ is the set
       \begin{center}
         $\overline{x} = [x] \coloneq \{y\in S\text{ }\vert\text{ } x\sim y\}$
       \end{center}
     \end{definition}
+    
     \begin{definition}
       \\If $\sim$ is an equivalence relation on a set $S$. Then the \textbf{quotient of $S$ mod $\sim$} is the set
       \begin{center}
         $S/\sim\text{ }\coloneq \{\overline{x}\text{ }\vert\text{ }x\in S\}$
       \end{center}
     \end{definition}
+    \fi
     \item [3.]Let $\mathbb{N}_n/\sim_\sigma = \{E_1,\dots,E_m\}$ be the quotient set of $\mathbb{N}_n$ under $\sim_\sigma$. Show that 
     \begin{center}
     \begin{align*}
