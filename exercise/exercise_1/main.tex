@@ -1,0 +1,87 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm, mathtools}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+ \usepackage{layout}
+ \usepackage[scale=0.75,top=1cm]{geometry}
+
+\newtheorem{problem}{}
+
+\begin{document}
+
+\title{Exercise 1}
+\author{Jonah Weinbaum}
+\date{\today}
+\maketitle
+
+\begin{enumerate}
+    \item Show that an element of a finite group is of finite order. 
+        \\That is, if $(G, \cdot)$ is such that $|G| < \infty$ then $\forall\text{ }x\in{G}$ then $\text{ord}(x) = k$ for some $k\in\mathbb{N}$. The $\operatorname{ord}(x)$ is the smallest positive integer $k$ such that $x^k = e$. If no such $k$ exists we say $\operatorname{ord}(x) = \infty$.
+    \item Let $S_n$ be the symmetric group on $n$ elements. Let $\sigma\in S_n$. Show that $\sim_{\sigma}$ defined by 
+    \begin{center}
+        $i\sim_\sigma j \iff \exists\text{ }k\in\mathbb{Z}\colon\sigma^k(i)=j$
+    \end{center}
+    is an equivalence relation.
+    \item Let $\mathbb{N}_n/\sim_\sigma = \{E_1,\dots,E_m\}$ be the quotient set of $\mathbb{N}_n$ under $\sim_\sigma$. Show that 
+    \begin{center}
+    \begin{align*}
+        \phi_i: E_i &\rightarrow E_i
+        \\x &\mapsto \sigma(x)
+    \end{align*}
+    \end{center}
+    is a well-defined permutation on $E_i$.
+    \item Let 
+    \begin{center}
+    \begin{align*}
+        \sigma_i: \mathbb{N}_n &\rightarrow \mathbb{N}_n
+        \\x &\mapsto \begin{cases} 
+      \sigma(x) & x\in E_i \\
+      x & x\notin E_i
+    \end{cases}
+    \end{align*}
+    \end{center}
+    It follows from $(3)$ that $\sigma_i$ is a permutation on $\mathbb{N}_n$. Show that $E_i$ and $E_j$ are disjoint for $i\ne j$.
+    \item Let $i\in\mathbb{N}_m$, show that $\sigma_i$ is a cycle. This can be reduced to showing that
+    \begin{center}
+        $E_i = \{x, \sigma_i(x), \dots \sigma_i^{k-1}(x)\}$ for some $k\in\mathbb{N}$ and $x\in E_i$.
+    \end{center}
+    \item Show that $\sigma = \sigma_1\sigma_2\dots\sigma_m$
+    \item From $(2)-(6)$ we have shown that $\sigma$ can be expressed as a product of disjoint cycles. As it is out of scope we will \emph{not} show (but you should know) that this expression as a product of disjoint cycles is unique up to the ordering of the cycles.
+    \item \[
+        \sigma = \begin{pmatrix}
+        1 & 2 & 3 & 4 & 5 & 6 \\
+        1 & 3 & 2 & 5 & 6 & 4
+        \end{pmatrix}
+        \]
+    Give $\sigma$ in its disjoint cycle notation.
+    \item For all $\sigma\in S_n$ let $\sigma$ be expressed in cycle notation as a composite of $n$ cycles containing $m_1,\dots,m_n$ elements where each $m_i \ge 2$. 
+    \text{}\\\\Let the $P: S_n\rightarrow \{1, -1\}$ be defined as follows:
+    \begin{center}
+        $\forall\text{ }\sigma\in S_n\colon P(\sigma) = \prod_{i=1}^n(-1)^{m_i-1}$
+    \end{center}
+    where $P(I_{S_n}) \coloneq 1$. 
+    \text{}\\\\Show that for all transpositions $\tau\in S_n$ we have $P(\sigma\circ\tau) = -P(\sigma)$.
+    \item Let $\sigma\in S_n$ be expressible as the composition of $r$ transpositions\text{}\\\\Show by induction that
+    \begin{center}
+        $P(\sigma) = (-1)^r$
+    \end{center}
+    \item Let $\sigma\in S_n$. Show that if $\sigma$ is expressible as a product of an even number of transpositions, then it cannot also be expressible as the product of an odd number of transpositions.
+    \item By $(3)-(5)$ the following is now a well defined function:
+    \begin{center}
+        For a permutation $\sigma\in S_n$, if we decompose $\sigma$ into $k$ transpositions, then the \textbf{sign} or \textbf{parity} of $\sigma$ is \text{}\\
+        $\operatorname{sgn}(\sigma) \coloneq\begin{cases} 
+      1 & k\text{ is even} \\
+      -1 & k\text{ is odd}
+    \end{cases}$
+    \end{center}
+    Note that $P$ and $\operatorname{sgn}$ are equivalent
+    \text{}\\\\Show the following regarding $\sigma, \rho\in S_n$
+    \begin{enumerate}
+        \item $\operatorname{sgn}(\sigma) = 1$ and $\operatorname{sgn}(\rho) = 1$ implies $\operatorname{sgn}(\rho\circ\sigma) = 1$
+        \item $\operatorname{sgn}(\sigma) = -1$ and $\operatorname{sgn}(\rho) = -1$ implies $\operatorname{sgn}(\rho\circ\sigma) = 1$
+        \item $\operatorname{sgn}(\sigma) = 1$ and $\operatorname{sgn}(\rho) = -1$ implies $\operatorname{sgn}(\rho\circ\sigma) = -1$
+    \end{enumerate}
+\end{enumerate}
+
+
+\end{document}
