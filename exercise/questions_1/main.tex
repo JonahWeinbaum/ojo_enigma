@@ -1,0 +1,81 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm, mathtools}
+\usepackage{stmaryrd}
+\usepackage{enumitem}
+ \usepackage{layout}
+ \usepackage[scale=0.75,top=1cm]{geometry}
+
+\newtheorem{problem}{}
+
+\begin{document}
+
+\title{Question 1}
+\author{Jonah Weinbaum}
+\date{\today}
+\maketitle
+
+\section{Functions}
+
+Here are some useful definitions regarding functions. Consider a function from a set $A$ to a set $B$ which we will denote $f: A\to B$.
+\\\\
+\begin{itemize}
+\item We call $A$ the \textbf{domain} of $f$.
+\item We call $B$ the \textbf{codomain} of $f$.
+  \item For a subset $X\subset{A}$ we call the set $f(X) \coloneq \{b\in B \text{ }\vert\text{ }\exists\text{ }a\in{A}\text{ s.t }b=f(a)\}$ the \textbf{image} of $X$ under $f$.
+\item We call the set $f(A)$ the \textbf{range} or \textbf{image} of $f$.
+\item For a subset $Y\subseteq B$ we call the set $f^{-1}(Y) \coloneq \{a\in A\text{ }\vert\text{ }f(a) \in Y\}$ the \textbf{preimage} or \textbf{inverse image} of $Y$ under $f$.
+\item We say $f$ is \textbf{injective} (is an \textbf{injection}) if $\forall\text{ }x_1, x_2\in {A}$ we have $x_1\ne x_2 \Rightarrow f(x_1) \ne f(x_2)$.
+\item We say $f$ is \textbf{surjective} (is a \textbf{surjection}) if $\forall\text{ }y\in B$ we have $\exists\text{ }x\in A$ s.t. $f(x) = y$.
+  \item We say $f$ is \textbf{bijective} (is a \textbf{bijection}) if it is both injective and surjective.
+\end{itemize}
+
+
+\section{The Integers Modulo $n$ $(\mathbb{Z}/n\mathbb{Z})$}
+
+Let $n\in\mathbb{Z}$. Define a relation on $\mathbb{Z}$ by
+\begin{center}
+  $a\sim_{n} b \iff \exists\text{ }k\in\mathbb{Z}\text{ s.t. }b-a = kn$
+\end{center}
+
+\begin{itemize}
+\item [1.] Prove that $\sim_{n}$ is an equivalence relation.
+\item [2.] How many distinct equivalence classes are there in $\mathbb{Z}/\sim_{n}$?
+\end{itemize}
+
+We call the set $\mathbb{Z}/\sim_{n}$  the \textbf{integers modulo $n$} and it is denoted $\mathbb{Z}/n\mathbb{Z}$.
+We can turn this into a group by adding a binary operation.
+
+\section{The Additive Group $(\mathbb{Z}/n\mathbb{Z}, +)$}
+
+We can define the additive binary operation on $\mathbb{Z}/n\mathbb{Z}$ as follows, $\forall\text{ }a,b\in\mathbb{Z}/n\mathbb{Z}$
+\begin{align*}
+  \overline{a} + \overline{b} &\coloneq \overline{a+b}\\
+\end{align*}
+  Let us look at a specific example.
+  \\\\Consider $\mathbb{Z}/5\mathbb{Z} = \{\overline{0}, \overline{1}, \overline{2}, \overline{3}, \overline{4}\}$ equipped with the above binary operation
+  \begin{itemize}
+  \item [3.] Show that $(\mathbb{Z}/5\mathbb{Z}, +)$ is a group.
+  \item [4.] What is $\overline{3} + \overline{4}$?
+  \item [5.] What is $\overline{3} + \overline{2}$?
+  \item [6.] What is $(\overline{3})^5$?
+  \item [7.] What is $(\overline{2})^{-1}$
+  \end{itemize}
+
+\section{The Multiplicative Group $(\mathbb{Z}/n\mathbb{Z}, \cdot)$}
+
+We can define the multiplicative binary operation on $\mathbb{Z}/n\mathbb{Z}$ as follows, $\forall\text{ }a,b\in\mathbb{Z}/n\mathbb{Z}$
+\begin{align*}
+  \overline{a} \cdot \overline{b} &\coloneq \overline{a\cdot b}\\
+\end{align*}
+  Let us look at a specific example.
+  \\\\Consider $(\mathbb{Z}/5\mathbb{Z})^\times = \{\overline{1}, \overline{2}, \overline{3}, \overline{4}\}$ (notice we don't include $\overline{0}$ since it has no inverse) equipped with the above binary operation
+  \begin{itemize}
+  \item [8.] What is the identity?
+  \item [9.] What is $\overline{3} \cdot \overline{4}$?
+  \item [10.] What is $\overline{3} \cdot \overline{2}$?
+  \item [11.] What is $(\overline{3})^5$?
+  \item [12.] What is $(\overline{2})^{-1}$
+  \end{itemize}
+
+  
+\end{document}
