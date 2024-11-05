@@ -29,7 +29,66 @@ Here are some useful definitions regarding functions. Consider a function from a
   \item We say $f$ is \textbf{bijective} (is a \textbf{bijection}) if it is both injective and surjective.
 \end{itemize}
 
+\begin{itemize}
+\item [1.] For each function, show if the function is injective, surjective, or both.
+  \begin{itemize}
+    \item [a.]
+    \begin{align*}
+    f: \mathbb{R} &\to \mathbb{R}\\
+    x &\mapsto x^2
+    \end{align*}
+    \item [b.]
+    \begin{align*}
+    f: \mathbb{R} &\to \mathbb{R}\\
+    x &\mapsto (x+1)^3
+    \end{align*}
+    \item [c.]
+    \begin{align*}
+    f: \mathbb{R} &\to \mathbb{R}\\
+      x &\mapsto |x|
+    \end{align*}
+    \item [d.]
+    \begin{align*}
+    f: \mathbb{R} &\to \mathbb{R}\\
+    x &\mapsto 2x+1
+    \end{align*}
+  \end{itemize}
+\item [2.] Let $f: A\to B$ and $g: B\to C$ be injections. Show that
+  \begin{align*}
+    g\circ f: A \to C
+  \end{align*}
+  is an injection.
+\item [3.] Let $f: A\to B$ and $g: B\to C$ be surjections. Show that
+  \begin{align*}
+    g\circ f: A \to C
+  \end{align*}
+  is a surjection.
+\item [4.] Let $f: A\to B$ and $g: B\to C$ be bijections. Show that
+  \begin{align*}
+    g\circ f: A \to C
+  \end{align*}
+  is a bijection.
+\item [5.] Give an example of an injection $f:A \to B$ and a surjection $g: B \to C$ such that
+  \begin{align*}
+    g\circ f: A \to B
+  \end{align*}
+  is not surjective or injective?
+\end{itemize}
 
+Let $f: A \to B$ be a function. For a subset $X\subseteq{A}$ we defined the \textbf{restriction} of $f$ to $X$ as
+\begin{align*}
+  f|_X: X &\to B\\
+  x &\mapsto f(x)
+\end{align*}
+\begin{itemize}
+\item [6.] If $f: A \to B$ is an injection and $X\subseteq{A}$ show that $f|_X$ is an injection.
+\item [7.] If $f: A \to B$ is an injection. Show that
+  \begin{align*}
+    g: A &\to f(A)\\
+    x &\mapsto f(x)
+  \end{align*}
+  is a bijection.
+\end{itemize}
 \section{The Integers Modulo $n$ $(\mathbb{Z}/n\mathbb{Z})$}
 
 Let $n\in\mathbb{Z}$. Define a relation on $\mathbb{Z}$ by
@@ -45,7 +104,7 @@ Let $n\in\mathbb{Z}$. Define a relation on $\mathbb{Z}$ by
 We call the set $\mathbb{Z}/\sim_{n}$  the \textbf{integers modulo $n$} and it is denoted $\mathbb{Z}/n\mathbb{Z}$.
 We can turn this into a group by adding a binary operation.
 
-\section{The Additive Group $(\mathbb{Z}/n\mathbb{Z}, +)$}
+\subsection{The Additive Group $(\mathbb{Z}/n\mathbb{Z}, +)$}
 
 We can define the additive binary operation on $\mathbb{Z}/n\mathbb{Z}$ as follows, $\forall\text{ }a,b\in\mathbb{Z}/n\mathbb{Z}$
 \begin{align*}
@@ -61,7 +120,7 @@ We can define the additive binary operation on $\mathbb{Z}/n\mathbb{Z}$ as follo
   \item [7.] What is $(\overline{2})^{-1}$
   \end{itemize}
 
-\section{The Multiplicative Group $(\mathbb{Z}/n\mathbb{Z}, \cdot)$}
+\subsection{The Multiplicative Group $(\mathbb{Z}/n\mathbb{Z}, \cdot)$}
 
 We can define the multiplicative binary operation on $\mathbb{Z}/n\mathbb{Z}$ as follows, $\forall\text{ }a,b\in\mathbb{Z}/n\mathbb{Z}$
 \begin{align*}
@@ -77,5 +136,53 @@ We can define the multiplicative binary operation on $\mathbb{Z}/n\mathbb{Z}$ as
   \item [12.] What is $(\overline{2})^{-1}$
   \end{itemize}
 
+  \section{Group Theory}
+
+  A \textbf{binary operation} $\star$ on a set $G$ is a function
+  \begin{align*}
+    \star: G \times G \to G
+  \end{align*}
+  and, for convenience, for any $a,b\in{G}$ we write $\star(a,b)$ as $a\star{b}$.
+  \\\\A \textbf{group} is a set $G$ equipped with a binary operation $\star$ on $G$ such that
+  \begin{itemize}
+  \item $\forall\text{ }a,b\in{G}$ we have $a\star(b\star{c}) = (a\star{b})\star{c}$ (that is $\star$ is \textbf{associative})
+  \item There exists an element $e\in{G}$ (which we call the \textbf{identity}) such that $\forall\text{ }a\in{G}$ we have
+    \begin{center}
+      $e\star{a}=a\star{e}=a$
+    \end{center}
+  \item For each element $a\in{G}$ there is an element $a^{-1}\in{G}$ (which we call the \textbf{inverse} of $a$) such that
+    \begin{center}
+      $a\star{a^{-1}}=a^{-1}\star{a}=e$
+    \end{center}
+  \end{itemize}
+  We denote the group $(G, \star)$.
+  \begin{itemize}
+  \item [1.] Let $(G,\star)$ be a group. Show that there exists \emph{only one} element $e\in{G}$ such that
+    \begin{center}
+      $\forall\text{ }a\in{G}\text{ we have }a\star{e}=e\star{a}=a$
+    \end{center}
+    That is, we know the identity exists by definition, but show it is unique.
+  \item[2.] Let $(G, \star)$ be a group. Let $a\in{G}$. Show that there exists \emph{only one} element $a^{-1}\in{G}$ such that
+    \begin{center}
+      $a\star a^{-1} = a^{-1}\star {a} = e$
+    \end{center}
+    That is, we know the inverse exists by definition, but show it is unique.
+  \item [3.] Let $(G, \star)$ be a group. Let $a\in{G}$. Show that
+    \begin{center}
+      $(a^{-1})^{-1} = a$
+    \end{center}
+  \item [4.] Let $(G, \star)$ be a group. Let $a,b\in{G}$. Show that
+    \begin{center}
+      $(a\star{b})^{-1} = (b^{-1})\star(a^{-1})$
+    \end{center}
+  \item [5.] Which of the following sets are groups with respect to the binary operation of addition:
+    \begin{itemize}
+    \item The set of rational numbers in lowest terms (reduced) whose denominators are odd.
+    \item The set of rational numbers in lowest terms (reduced) whose denominators are even.
+    \item The set $\{q\in\mathbb{Q}\text{ }\vert\text{ }|q| < 1\}$.
+    \item The set $\{q\in\mathbb{Q}\text{ }\vert\text{ }|q| \ge 1\} \cup \{0\}$.
+    \item The set $\{\frac{a}{b}\in\mathbb{Q}\text{ }\vert\text{ }b=1\text{ or }b=2\}$
+    \end{itemize}
+  \end{itemize}
   
 \end{document}
